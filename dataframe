@@ -1,0 +1,28 @@
+import pandas as pd 
+data = {
+    'Mes' : ['Enero','Febrero','Marzo','Abril'],
+    'Ventas' : [20133,15600,28200,30900],
+    'Gastos' : [22000,23400,19100,25700]
+}
+
+df = pd.DataFrame(data)
+print(df)
+#Escribir una función que reciba un DataFrame con el formato del ejercicio anterior (Mes, Ventas,
+#Gastos), un umbral de ventas, y devuelva una Serie con los nombres de los meses donde las ventas
+#superaron el umbral especificado.
+
+def Ventas_sobre_umbral(df,umbral):
+    return df[df['Ventas'] > umbral ]
+print(Ventas_sobre_umbral(df,30000))
+
+#Escribir una función que reciba un DataFrame con el formato del ejercicio anterior, un mes, y devuelva
+#el balance (ventas - gastos) total en el mes indicado.
+
+def Balance(df,mes):
+   df ['balance']= df['Ventas'] - df['Gastos']
+   print(df)
+   return df[df['Mes'] == mes]
+
+print('\n')
+
+print(Balance(df,'Abril'))
